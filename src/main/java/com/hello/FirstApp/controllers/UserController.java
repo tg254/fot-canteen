@@ -17,16 +17,19 @@ public class UserController {
 
     @GetMapping
     public List<User> getAllIUsers(){
+
         return usersService.readAllUsers();
     }
 
     @GetMapping(path ="{id}")
     public Optional<User> getUser(@PathVariable("id") Integer id){
+
         return usersService.readUser(id);
     }
 
     @PostMapping
     public void postUser(@NotNull @RequestBody User user){
+
         usersService.createUser(user);
     }
 
